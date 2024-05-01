@@ -4,7 +4,7 @@ namespace AdfGL_Cad3Dlib.Objects
 {
     public class UserObject3D : Object3D
     {
-        public UserObject3D(Mesh mesh) : base(mesh)
+        public UserObject3D(GLMesh mesh) : base(mesh)
         {
 
         }

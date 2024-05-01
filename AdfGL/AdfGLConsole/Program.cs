@@ -1,4 +1,6 @@
 ﻿using AdfGL_SDL2;
+using AdfGLConsole.Demos;
+using AdfGLConsole.Utils;
 
 namespace AdfGLConsole
 {
@@ -10,7 +12,12 @@ namespace AdfGLConsole
             int height = 600;
             var win = new WindowSDL2();
             var host = new DemoHost(win);
-            var app = new DemoApp(null);
+            var app = new ConvexHullApp(null);
+
+            var points = PointsGenerator.Sphere(100, 100);
+            points = Onion.Points;
+
+            app.SetShape(points);
 
             app.DisplayFps = true;
 

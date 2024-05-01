@@ -15,13 +15,13 @@ namespace AdfGL_Cad3Dlib.Objects
             Fireframe = new RenderMember();
         }
 
-        public Object3D(Mesh mesh) : this()
+        public Object3D(GLMesh mesh) : this()
         {
             Mesh = mesh;
             UsesSharedMesh = true;
         }
 
-        public Mesh Mesh { get; set; } = null!;
+        public GLMesh Mesh { get; set; } = null!;
         public bool UsesSharedMesh { get; } = false;
 
         public RenderMember Body { get; set; }

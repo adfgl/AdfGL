@@ -1,14 +1,7 @@
 ﻿using AdfGL_Cad3Dlib.Objects;
 using AdfGL_Cad3Dlib.Utils;
-using AdfGLCoreLib.Enums;
-using AdfGLCoreLib.Services;
 using AdfGLDrawingLib;
 using LinearAlgebraLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdfGL_Cad3Dlib
 {
@@ -48,7 +41,7 @@ namespace AdfGL_Cad3Dlib
             Mat4 mCamera = Camera.View;
             Vec3 lightDirection = Camera.GetDirectionalLight();
 
-            var trns = new Trans3();
+            Trans3 trns = new Trans3();
             foreach (var obj3 in Scene)
             {
                 trns.Reset();
@@ -67,8 +60,7 @@ namespace AdfGL_Cad3Dlib
                     trns.RotateZ(obj3.RotationZ);
                 }
 
-
-                Mesh mesh = obj3.Mesh;
+                GLMesh mesh = obj3.Mesh;
 
                 bool drawFill = obj3.Body.Draw;
                 bool drawBorders = obj3.Fireframe.Draw;
@@ -213,7 +205,7 @@ namespace AdfGL_Cad3Dlib
                     }
 
                     // scale into view
-                    foreach (var triangle in listTriangles)
+                    foreach (Triangle3D triangle in listTriangles)
                     {
                         int x0 = (int)triangle.P1.x + x;
                         int y0 = (int)triangle.P1.y + y;

@@ -2,7 +2,7 @@
 using AdfGLCoreLib.Application;
 using AdfGLDrawingLib;
 
-namespace AdfGLConsole
+namespace AdfGLConsole.Demos
 {
     public class DemoApp : AppBase
     {

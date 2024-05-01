@@ -2,14 +2,14 @@
 
 namespace AdfGL_Cad3Dlib.Utils
 {
-    public class Mesh
+    public class GLMesh
     {
         readonly double[] _vertices;
         readonly int _vertexCount;
         readonly int[] _triangles;
         readonly int _triangleCount;
 
-        Mesh(int vertexCount, int triangleCount)
+        public GLMesh(int vertexCount, int triangleCount)
         {
             _vertices = new double[vertexCount * 3];
             _vertexCount = vertexCount;
@@ -17,7 +17,7 @@ namespace AdfGL_Cad3Dlib.Utils
             _triangleCount = triangleCount;
         }
 
-        public Mesh(double[] vertices, int[] triangles)
+        public GLMesh(double[] vertices, int[] triangles)
         {
             _vertices = vertices.ToArray();
             _vertexCount = vertices.Length / 3;
@@ -70,7 +70,7 @@ namespace AdfGL_Cad3Dlib.Utils
             _triangles[index * 4 + 3] = color;
         }
 
-        public Mesh Forward(Trans3 transformation)
+        public GLMesh Forward(Trans3 transformation)
         {
             Vec3 v;
             for (int i = 0; i < _vertexCount; i++)
@@ -81,7 +81,7 @@ namespace AdfGL_Cad3Dlib.Utils
             return this;
         }
 
-        public Mesh Backward(Trans3 transformation)
+        public GLMesh Backward(Trans3 transformation)
         {
             Vec3 v;
             for (int i = 0; i < _vertexCount; i++)
@@ -92,7 +92,7 @@ namespace AdfGL_Cad3Dlib.Utils
             return this;
         }
 
-        public static Mesh Load(string path)
+        public static GLMesh Load(string path)
         {
             using (var stream = File.OpenRead(path))
             {
@@ -100,7 +100,7 @@ namespace AdfGL_Cad3Dlib.Utils
             }
         }
 
-        public static Mesh Load(Stream stream)
+        public static GLMesh Load(Stream stream)
         {
             List<Vec3> vertices = new List<Vec3>();
             List<Tuple<int, int, int>> faces = new List<Tuple<int, int, int>>();
@@ -141,7 +141,7 @@ namespace AdfGL_Cad3Dlib.Utils
                 }
             }
 
-            Mesh mesh = new Mesh(vertices.Count, faces.Count);
+            GLMesh mesh = new GLMesh(vertices.Count, faces.Count);
             for (int i = 0; i < mesh.TriangleCount; i++)
             {
                 Tuple<int, int, int> face = faces[i];

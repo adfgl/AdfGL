@@ -3,7 +3,7 @@ using AdfGL_Cad3Dlib.Controls;
 using AdfGLCoreLib.Application;
 using AdfGLDrawingLib;
 
-namespace AdfGLConsole
+namespace AdfGLConsole.Demos
 {
     public class Cad3D : AppBase
     {
