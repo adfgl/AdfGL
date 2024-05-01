@@ -9,6 +9,14 @@ namespace AdfGL_Cad3Dlib.Utils
         readonly int[] _triangles;
         readonly int _triangleCount;
 
+        Mesh(int vertexCount, int triangleCount)
+        {
+            _vertices = new double[vertexCount * 3];
+            _vertexCount = vertexCount;
+            _triangles = new int[triangleCount * 4];
+            _triangleCount = triangleCount;
+        }
+
         public Mesh(double[] vertices, int[] triangles)
         {
             _vertices = vertices.ToArray();
@@ -60,6 +68,91 @@ namespace AdfGL_Cad3Dlib.Utils
         public void SetTriangleColor(int index, int color)
         {
             _triangles[index * 4 + 3] = color;
+        }
+
+        public Mesh Forward(Trans3 transformation)
+        {
+            Vec3 v;
+            for (int i = 0; i < _vertexCount; i++)
+            {
+                v = GetVertex(i);
+                SetVertex(i, transformation.Forward(v));
+            }
+            return this;
+        }
+
+        public Mesh Backward(Trans3 transformation)
+        {
+            Vec3 v;
+            for (int i = 0; i < _vertexCount; i++)
+            {
+                v = GetVertex(i);
+                SetVertex(i, transformation.Backward(v));
+            }
+            return this;
+        }
+
+        public static Mesh Load(string path)
+        {
+            using (var stream = File.OpenRead(path))
+            {
+                return Load(stream);
+            }
+        }
+
+        public static Mesh Load(Stream stream)
+        {
+            List<Vec3> vertices = new List<Vec3>();
+            List<Tuple<int, int, int>> faces = new List<Tuple<int, int, int>>();
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                string line;
+                while ((line = reader.ReadLine()!) != null)
+                {
+                    string[] parts = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    if (parts.Length == 0)
+                        continue;
+
+                    if (parts[0] == "v" && parts.Length >= 4)
+                    {
+                        // Parse vertex positions
+                        float x = float.Parse(parts[1]);
+                        float y = float.Parse(parts[2]);
+                        float z = float.Parse(parts[3]);
+                        vertices.Add(new Vec3(-x, -y, z));
+                    }
+                    else if (parts[0] == "f" && parts.Length >= 4)
+                    {
+                        // Parse face indices
+                        int[] indices = new int[parts.Length - 1];
+                        for (int i = 1; i < parts.Length; i++)
+                        {
+                            int index = int.Parse(parts[i].Split('/')[0]);
+                            // OBJ indices are 1-based, so subtract 1 to convert to 0-based indexing
+                            indices[i - 1] = index - 1;
+                        }
+
+                        for (int i = 1; i < indices.Length - 1; i++)
+                        {
+                            faces.Add(Tuple.Create(indices[0], indices[i], indices[i + 1]));
+                        }
+                    }
+                }
+            }
+
+            Mesh mesh = new Mesh(vertices.Count, faces.Count);
+            for (int i = 0; i < mesh.TriangleCount; i++)
+            {
+                Tuple<int, int, int> face = faces[i];
+                mesh.SetTriangle(i, face.Item1, face.Item2, face.Item3);    
+            }
+
+            for (int i = 0; i < mesh.VertexCount; i++)
+            {
+                mesh.SetVertex(i, vertices[i]);
+            }
+            return mesh;
         }
     }
 }
