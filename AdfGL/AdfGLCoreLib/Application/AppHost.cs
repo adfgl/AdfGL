@@ -1,5 +1,6 @@
 ﻿using AdfGLCoreLib.Events;
 using AdfGLCoreLib.Services;
+using AdfGLDrawingLib;
 
 namespace AdfGLCoreLib.Application
 {
@@ -46,8 +47,7 @@ namespace AdfGLCoreLib.Application
                 activeBuffer.Fill(Background);
             }
 
-
-            var box = activeBuffer.GetBox();
+            IntBox box = activeBuffer.GetBox();
 
             activeBuffer.FillCircle(box, MouseX, MouseY, 10, IntColours.Gray, false);
         }
