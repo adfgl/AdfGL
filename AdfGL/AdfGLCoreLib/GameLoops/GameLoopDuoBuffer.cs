@@ -19,7 +19,7 @@ namespace AdfGLCoreLib.GameLoops
 
         public override void HandleFrameBufferReset()
         {
-            Host.RenderToBuffer(buffer.Back);
+            Host.Application.RenderToBuffer(buffer.Back);
             buffer.SwapBuffers();
             Host.UpdateScreen(buffer.Front);
         }

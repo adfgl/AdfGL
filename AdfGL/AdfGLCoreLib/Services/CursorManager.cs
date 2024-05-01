@@ -20,7 +20,7 @@ namespace AdfGLCoreLib.Services
         }
     }
 
-    public static class YaCursor
+    public static class AdfGLCursor
     {
         static EMouseCursor _mouseCursor = EMouseCursor.None;
         internal static CursorManager s_Manager = new();

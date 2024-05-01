@@ -1,4 +1,6 @@
-﻿namespace AdfGLCoreLib
+﻿using AdfGLCoreLib.Enums;
+
+namespace AdfGLCoreLib
 {
     public struct AppEvent
     {

@@ -101,7 +101,7 @@ namespace AdfGLCoreLib
 
         public void EnableCursor(CursorManager manager)
         {
-            YaCursor.s_Manager = manager;
+            AdfGLCursor.s_Manager = manager;
         }
     }
 }
