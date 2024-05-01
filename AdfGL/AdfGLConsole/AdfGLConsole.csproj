@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AdfGL_Cad3Dlib\AdfGL_Cad3Dlib.csproj" />
+    <ProjectReference Include="..\AdfGL_SDL2\AdfGL_SDL2.csproj" />
+  </ItemGroup>
+
 </Project>
