@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdfGLConsole", "AdfGLConsole\AdfGLConsole.csproj", "{2F7CBD85-FFDC-4B1B-9126-F178F422886B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdfGLConsole", "AdfGLConsole\AdfGLConsole.csproj", "{2F7CBD85-FFDC-4B1B-9126-F178F422886B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdfGLCoreLib", "AdfGLCoreLib\AdfGLCoreLib.csproj", "{8AD62D77-7169-4E80-8A8E-8C2C65ACDBCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdfGLCoreLib", "AdfGLCoreLib\AdfGLCoreLib.csproj", "{8AD62D77-7169-4E80-8A8E-8C2C65ACDBCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdfGL_SDL2", "AdfGL_SDL2\AdfGL_SDL2.csproj", "{A68100E6-CD44-47F4-9BEE-6EE4B2C50D4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdfGL_SDL2", "AdfGL_SDL2\AdfGL_SDL2.csproj", "{A68100E6-CD44-47F4-9BEE-6EE4B2C50D4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdfGLDrawingLib", "AdfGLDrawingLib\AdfGLDrawingLib.csproj", "{B6065DD5-1B3E-4D2A-A4EA-62AF9994E25B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdfGLDrawingLib", "AdfGLDrawingLib\AdfGLDrawingLib.csproj", "{B6065DD5-1B3E-4D2A-A4EA-62AF9994E25B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearAlgebraLib", "..\..\MathUtilsLib\MathUtils\LinearAlgebraLib\LinearAlgebraLib.csproj", "{0107E791-6AFE-40F9-AB24-1BA052477D57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdfGL_Cad2Dlib", "AdfGL_Cad2Dlib\AdfGL_Cad2Dlib.csproj", "{849B58ED-BB6F-480C-8A42-D459068CD468}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdfGL_Cad2Dlib", "AdfGL_Cad2Dlib\AdfGL_Cad2Dlib.csproj", "{849B58ED-BB6F-480C-8A42-D459068CD468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdfGL_Cad3Dlib", "AdfGL_Cad3Dlib\AdfGL_Cad3Dlib.csproj", "{AD0DD032-1573-4BA9-8924-2C3BA9D836C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CAD", "CAD", "{9E099B72-E7B9-4D28-8AF0-7E15733F1A34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,17 @@ Global
 		{849B58ED-BB6F-480C-8A42-D459068CD468}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{849B58ED-BB6F-480C-8A42-D459068CD468}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{849B58ED-BB6F-480C-8A42-D459068CD468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD0DD032-1573-4BA9-8924-2C3BA9D836C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD0DD032-1573-4BA9-8924-2C3BA9D836C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD0DD032-1573-4BA9-8924-2C3BA9D836C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD0DD032-1573-4BA9-8924-2C3BA9D836C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{849B58ED-BB6F-480C-8A42-D459068CD468} = {9E099B72-E7B9-4D28-8AF0-7E15733F1A34}
+		{AD0DD032-1573-4BA9-8924-2C3BA9D836C5} = {9E099B72-E7B9-4D28-8AF0-7E15733F1A34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5085C70-05AA-42D1-9032-EEB6BD884FD4}

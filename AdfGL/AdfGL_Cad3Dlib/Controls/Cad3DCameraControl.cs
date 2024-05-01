@@ -1,4 +1,9 @@
-﻿using System;
+﻿using AdfGLCoreLib.Enums;
+using AdfGLCoreLib.Events;
+using AdfGLCoreLib.Services;
+using AdfGLDrawingLib;
+using LinearAlgebraLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
