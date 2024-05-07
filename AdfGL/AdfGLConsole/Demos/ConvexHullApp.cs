@@ -48,11 +48,15 @@ namespace AdfGLConsole.Demos
                 mesh.SetTriangle(i, t.Indices[0], t.Indices[1], t.Indices[2]);
             }
 
+            Trans3 trans = new Trans3();
+            trans.Scale(0.5);
+            mesh.Forward(trans);
+
             UserObject3D cvx = new UserObject3D(mesh)
             {
                 Body = new Object3D.RenderMember()
                 {
-                    Draw = true,
+                    Draw = false,
                     InnerColour = Colours.Wheat,
                     OuterColour = Colours.Gray,
                 },

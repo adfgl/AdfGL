@@ -62,6 +62,11 @@ namespace AdfGL_Cad2Dlib.Objects
             return new IntBox(minx, miny, maxx, maxy);
         }
 
+        public virtual void Update(double ellapse)
+        {
+            // do nothing
+        }
+
         protected void WorldToScreen(Vec2 v, out int x, out int y)
         {
             Container.WorldToScreen(v.x, v.y, out x, out y);

@@ -3,9 +3,9 @@ using LinearAlgebraLib;
 
 namespace AdfGL_Cad2Dlib.Objects
 {
-    public class YaRectangle : Object2Dbase
+    public class Rectangle : Object2Dbase
     {
-        public YaRectangle(Container2D container) : base(container, 2)
+        public Rectangle(Container2D container) : base(container, 2)
         {
         }
 

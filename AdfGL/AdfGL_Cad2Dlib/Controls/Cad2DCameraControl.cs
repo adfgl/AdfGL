@@ -38,10 +38,9 @@ namespace AdfGL_Cad2Dlib.Controls
         {
             if (InputDevices.Mouse.IsPressed(PAN_BUTTON))
             {
-
                 double scale = DataContext.Container.WorldScale;
-                double offX = ((double)e.X - s_panStartX) / scale;
-                double offY = ((double)e.Y - s_panStartY) / scale;
+                double offX = (e.X - s_panStartX) / scale;
+                double offY = (e.Y - s_panStartY) / scale;
 
                 DataContext.Container.WorldOffset -= new Vec2(offX, offY);
 
@@ -62,7 +61,7 @@ namespace AdfGL_Cad2Dlib.Controls
         {
             double speed = 0.05f;
             DataContext.Container.ScreenToWorld(e.X, e.Y, out double xb, out double yb);
-            DataContext.Container.WorldScale *= e.DeltaY > 0 ? (1f + speed) : (1f - speed);
+            DataContext.Container.WorldScale *= e.DeltaY > 0 ? (1 + speed) : (1 - speed);
             DataContext.Container.ScreenToWorld(e.X, e.Y, out double xa, out double ya);
             DataContext.Container.WorldOffset += new Vec2(xb - xa, -yb + ya);
             return false;

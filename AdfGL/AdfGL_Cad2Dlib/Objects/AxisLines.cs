@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace AdfGL_Cad2Dlib.Objects
 {
-    public class YaAxisLines : Object2Dbase
+    public class AxisLines : Object2Dbase
     {
         int _xAxisColor;
         int _yAxisColor;
 
-        public YaAxisLines(Container2D container, int? xAxisColor = null, int? yAxisColor = null) : base(container, 1)
+        public AxisLines(Container2D container, int? xAxisColor = null, int? yAxisColor = null) : base(container, 1)
         {
             float opacity = 0.5f;
             _xAxisColor = xAxisColor ?? Colours.Red.ApplyOpacity(opacity).ToInt();

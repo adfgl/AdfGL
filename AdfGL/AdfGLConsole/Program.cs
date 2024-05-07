@@ -14,8 +14,8 @@ namespace AdfGLConsole
             var host = new DemoHost(win);
             var app = new ConvexHullApp(null);
 
-            var points = PointsGenerator.Sphere(100, 100);
-            points = Onion.Points;
+            var points = PointsGenerator.Sphere(20, 100);
+            points = Onion.Points.ToArray();
 
             app.SetShape(points);
 

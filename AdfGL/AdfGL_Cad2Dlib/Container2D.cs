@@ -1,4 +1,5 @@
-﻿using AdfGLDrawingLib;
+﻿using AdfGL_Cad2Dlib.Objects;
+using AdfGLDrawingLib;
 using LinearAlgebraLib;
 
 namespace AdfGL_Cad2Dlib
@@ -11,12 +12,15 @@ namespace AdfGL_Cad2Dlib
 
         public void Update(double ellapse)
         {
-
+            foreach (var item in Scene)
+            {
+                item.Update(ellapse);
+            }
         }
 
         public void Render(IntBox box, FrameBuffer buffer)
         {
-            var axis = new YaAxisLines(this);
+            var axis = new AxisLines(this);
             axis.DrawSelf(box, buffer);
 
             foreach (var item in Scene)

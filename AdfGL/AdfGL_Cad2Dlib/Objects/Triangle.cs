@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AdfGL_Cad2Dlib.Objects
 {
-    public class YaTriangle : Object2Dbase
+    public class Triangle : Object2Dbase
     {
         public double X1 { get; set; }
         public double Y1 { get; set; }
@@ -21,7 +21,7 @@ namespace AdfGL_Cad2Dlib.Objects
 
         public ELineStyle LineStyle { get; set; } = ELineStyle.Solid;
 
-        public YaTriangle(Container2D container, Vec2 a, Vec2 b, Vec2 c) : base(container, 3)
+        public Triangle(Container2D container, Vec2 a, Vec2 b, Vec2 c) : base(container, 3)
         {
             X1 = a.x;
             Y1 = a.y;
