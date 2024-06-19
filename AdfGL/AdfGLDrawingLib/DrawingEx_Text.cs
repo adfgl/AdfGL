@@ -212,9 +212,9 @@ namespace AdfGLDrawingLib
 
             Trans2 trns = new Trans2();
             float scale = (float)fontSize / (float)atlas.Info.Size;
-            trns.Translate(x, y);
-            trns.Rotate(rotAngle);
             trns.Scale(scale);
+            trns.Rotate(rotAngle);
+            trns.Translate(x, y);
 
             DrawString(buffer, trns, atlas, size, text, fillColor, borderColor, opacity);
         }

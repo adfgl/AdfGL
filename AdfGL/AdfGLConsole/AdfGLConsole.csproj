@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Cvx\CvxLib\CvxLib.csproj" />
     <ProjectReference Include="..\..\..\MathUtilsLib\MathUtils\GeometryLib\GeometryLib.csproj" />
     <ProjectReference Include="..\AdfGL_Cad3Dlib\AdfGL_Cad3Dlib.csproj" />
     <ProjectReference Include="..\AdfGL_SDL2\AdfGL_SDL2.csproj" />

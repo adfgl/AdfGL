@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CAD", "CAD", "{9E099B72-E7B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeometryLib", "..\..\MathUtilsLib\MathUtils\GeometryLib\GeometryLib.csproj", "{87801E5F-B645-4877-945D-C6F304735D9C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CvxLib", "..\..\Cvx\CvxLib\CvxLib.csproj", "{067A1400-37E5-408C-93BF-48D3E5E8E4BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{87801E5F-B645-4877-945D-C6F304735D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87801E5F-B645-4877-945D-C6F304735D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87801E5F-B645-4877-945D-C6F304735D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067A1400-37E5-408C-93BF-48D3E5E8E4BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067A1400-37E5-408C-93BF-48D3E5E8E4BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067A1400-37E5-408C-93BF-48D3E5E8E4BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067A1400-37E5-408C-93BF-48D3E5E8E4BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

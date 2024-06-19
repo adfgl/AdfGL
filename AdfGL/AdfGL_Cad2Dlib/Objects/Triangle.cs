@@ -50,7 +50,7 @@ namespace AdfGL_Cad2Dlib.Objects
             var fill = Opacity == 1f ? Fill : Fill.ApplyOpacity(Opacity);
             if (fill.a != 0)
             {
-                buffer.FillTriangleNaive(in box, x1, y1, x2, y2, x3, y3, fill.ToInt(), fill.a != 255);
+                buffer.FillTriangle(in box, x1, y1, x2, y2, x3, y3, fill.ToInt(), fill.a != 255);
             }
 
             var stroke = Opacity == 1f ? Stroke : Stroke.ApplyOpacity(Opacity);
